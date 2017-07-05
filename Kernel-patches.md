@@ -12,3 +12,5 @@ ez-wifibroadcast-1.4-kernel-4.4-patches.diff implements [1] and [3]
 mac80211-radiotap-bitrate_mcs_rtscts.linux-4.4.patch implements [2]
 
 Also there are AR9271 patches, but I've never try it because I don't have any atheros hardware. My HW setup is RT3572 (rt2800 driver) in 5GHz band.
+
+If you have recent mainline kernel (4.x) you don't need [2] (it already here). [1] and [3] are optional and needed only to increase transmit range and channel bandwidth.
