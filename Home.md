@@ -10,4 +10,4 @@ Welcome to the wifibroadcast wiki!
 
 [RX ring](RX-ring)
 
-[OSD for wifibroadcast](https://github.com/svpcom/wifibroadcast_osd)
+[OSD for raspberry pi + wifibroadcast](https://github.com/svpcom/wifibroadcast_osd) CPU consumption is < 10% on RPI zero. Compatible with any screen resolution. Supports aspect correction for PAL to HD scaling.
