@@ -9,3 +9,5 @@ Welcome to the wifibroadcast wiki!
 [Mavlink mode](Mavlink-mode)
 
 [RX ring](RX-ring)
+
+[OSD for wifibroadcast](https://github.com/svpcom/wifibroadcast_osd)
