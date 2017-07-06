@@ -1,3 +1,6 @@
+If your video pipeline doesn't work, before opening new issue please
+try following steps:
+
 1. Run ``scripts/tx_standalone.sh wlan1`` on TX host
 2. Run ``scripts/rx_standalone.sh wlan1`` on RX host
 3. Run ``nc -u 5600`` on RX host
