@@ -1,5 +1,7 @@
 Welcome to the wifibroadcast wiki!
 
+[Troubleshooting](Troubleshooting)
+
 [Encryption](Encryption)
 
 [Kernel patches](Kernel-patches)
