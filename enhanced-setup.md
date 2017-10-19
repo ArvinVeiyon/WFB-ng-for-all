@@ -8,3 +8,5 @@ To setup this you will need:
 5. 5-port 1Gbps ethernet switch
 6. 5v 10A UBEC and LiPo battery for powering RX antenna grid.
 7. 3DR (Sik) Radio modules (V2 is preferred)
+
+... to be continue
