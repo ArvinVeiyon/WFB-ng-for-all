@@ -9,5 +9,5 @@ To setup this you will need:
 6. 5v 10A UBEC and LiPo battery for powering RX antenna grid.
 7. 3DR (Sik) Radio modules (V2 is preferred)
 
-![Enhanced setup](https://github.com/svpcom/wifibroadcast/blob/master/doc/enhanced_setup.svg)
+[![Enhanced setup](https://github.com/svpcom/wifibroadcast/blob/master/doc/enhanced_setup.svg)](https://github.com/svpcom/wifibroadcast/blob/master/doc/enhanced_setup.svg)
 ... to be continue
