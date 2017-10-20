@@ -1,4 +1,4 @@
-The following chipset was tested with wifibroadcast (used by author):
+The following chipsets were tested with wifibroadcast (used by author):
   - Ralink RT3572 (ALFA AWUS051NH v2). Use it for TX
   - Ralink RT5572 (CSL 300Mbit Stick, GWF-4M02 OEM modules). Use it for RX
 
