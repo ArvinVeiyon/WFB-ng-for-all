@@ -22,6 +22,10 @@ Q: What are transmission guarancies?
 
 A: Wifibrodcast use FEC (forward error correction) which can recover 4 lost packets from 12 packets block with default settings. You can tune it (both TX and RX simultaniuosly!) to fit your needs.
 
+Q: Is only Raspberry PI supported?
+
+A: Wifibroadcast is not tied to any GPU - it operates with UDP packets. But to get RTP stream you need a video encoder (with encode raw data from camera to x264 stream). In my case RPI is only used for video encoding (becase RPI Zero is too slow to do anything else) and all other tasks (including wifibroadcast) are done by other board (NanoPI NEO2).
+
 ## TODO
 1. Write user docs and make prebuild packages. Pull requests are welcome.
 2. Do a flight test with different cards/antennas.
