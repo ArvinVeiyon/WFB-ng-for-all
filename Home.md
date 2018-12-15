@@ -30,8 +30,7 @@ A: Wifibroadcast is not tied to any GPU - it operates with UDP packets. But to g
 [Analysis of Injection Capabilities and Media Access of IEEE 802.11 Hardware in Monitor Mode](https://github.com/svpcom/wifibroadcast/blob/master/patches/Analysis%20of%20Injection%20Capabilities%20and%20Media%20Access%20of%20IEEE%20802.11%20Hardware%20in%20Monitor%20Mode.pdf)
 
 ## TODO
-1. Write user docs and make prebuild packages. Pull requests are welcome.
+1. Write user docs. Pull requests are welcome.
 2. Do a flight test with different cards/antennas.
 3. Investigate how to set TX power without CRDA hacks.
 4. Tune FEC for optimal latency/redundancy.
-5. Inject packets with radio link RSSI to mavlink stream
