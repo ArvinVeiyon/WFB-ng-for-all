@@ -20,7 +20,7 @@ How to install WFB with bidirectional mavlink telemetry
    With this settings WFB will connect to udp://127.0.0.1:14550 on drone and GS.
    Configure mavlink-router to listen on 127.0.0.1:14550 on the drone and use QGroundControl on the GS.
    See `telemetry/conf/master.cfg` for all available options and default values.
-5. Edit `/lib/systemd/system/wifibroadcast@.service` and repace `wlan0` with proper wifi interface name. Also add to `/etc/NetworkManager/NetworkManager.conf` following section:
+5. Edit `/etc/default/wifibroadcast` and repace `wlan0` with proper wifi interface name. Also add to `/etc/NetworkManager/NetworkManager.conf` following section:
    ```
    [keyfile]
    unmanaged-devices=interface-name:wlan0
