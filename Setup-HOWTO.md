@@ -27,7 +27,7 @@ How to install WFB with bidirectional mavlink telemetry
    ```
    and use QGroundControl on the GS.
    See `telemetry/conf/master.cfg` for all available options and default values.
-6. Setup video streaming on the drone to rtp://127.0.0.1:5702 or redefine listen port in `/etc/wifibroadcast.cfg` (see `telemetry/conf/master.cfg` for reference)
+6. Setup RTP video streaming on the drone to udp://127.0.0.1:5602 or redefine listen port in `/etc/wifibroadcast.cfg` (see `telemetry/conf/master.cfg` for reference)
 7. Edit `/etc/default/wifibroadcast` and repace `wlan0` with proper wifi interface name. Also add to `/etc/NetworkManager/NetworkManager.conf` following section:
    ```
    [keyfile]
