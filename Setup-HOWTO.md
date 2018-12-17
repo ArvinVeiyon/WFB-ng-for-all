@@ -14,17 +14,25 @@ How to install WFB with bidirectional mavlink telemetry
    for drone:
    ```
    [drone_mavlink]
-   listen = None
-   connect = 14550
+   listen = 14550
+   connect = None
    ```
-   With this settings WFB will connect to udp://127.0.0.1:14550 on drone and GS.
-   Configure mavlink-router to listen on 127.0.0.1:14550 on the drone and use QGroundControl on the GS.
+   With this settings WFB will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
+5. Configure mavlink-router to connect to 127.0.0.1:14550 on the drone:
+   ```
+   [UdpEndpoint wifibroadcast]
+   Mode = Normal
+   Address = 127.0.0.1
+   Port = 14550
+   ```
+   and use QGroundControl on the GS.
    See `telemetry/conf/master.cfg` for all available options and default values.
-5. Edit `/etc/default/wifibroadcast` and repace `wlan0` with proper wifi interface name. Also add to `/etc/NetworkManager/NetworkManager.conf` following section:
+6. Setup video streaming on the drone to rtp://127.0.0.1:5702 or redefine listen port in `/etc/wifibroadcast.cfg` (see `telemetry/conf/master.cfg` for reference)
+7. Edit `/etc/default/wifibroadcast` and repace `wlan0` with proper wifi interface name. Also add to `/etc/NetworkManager/NetworkManager.conf` following section:
    ```
    [keyfile]
    unmanaged-devices=interface-name:wlan0
    ```
    to ignore WFB interface.
-6. Do `systemctl daemon-reload`, `systemctl start wifibroadcast@gs` on the GS and `systemctl start wifibroadcast@drone` on the drone.
-7. Run `wfb-cli` on GS to monitor link state
+8. Do `systemctl daemon-reload`, `systemctl start wifibroadcast@gs` on the GS and `systemctl start wifibroadcast@drone` on the drone.
+9. Run `wfb-cli` on GS to monitor link state
