@@ -42,7 +42,7 @@ How to install WFB with bidirectional mavlink telemetry
    mcs_index = 1      # mcs index
    ```
    
-5. Configure mavlink-router to connect to 127.0.0.1:14550 on the drone:
+5. Configure [mavlink-router](https://github.com/intel/mavlink-router) to connect to 127.0.0.1:14550 on the drone:
    ```
    [UdpEndpoint wifibroadcast]
    Mode = Normal
