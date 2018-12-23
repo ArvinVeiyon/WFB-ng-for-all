@@ -18,6 +18,30 @@ How to install WFB with bidirectional mavlink telemetry
    connect = None
    ```
    With this settings WFB will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
+
+   If you want to override default modulation type (MCS#1, short GI, 40MHz BW, STBC 1)
+   you can do it for each stream. **Stream settings are independent**. You can use different modulation for each of them.
+   For example:
+   ```
+   [drone_video]
+   bandwidth = 20     # bandwidth 20 or 40 MHz
+   short_gi = False   # use short GI or not
+   stbc = 1           # stbc streams: 1, 2, 3 or 0 if unused
+   mcs_index = 1      # mcs index
+
+   [drone_mavlink]
+   bandwidth = 20     # bandwidth 20 or 40 MHz
+   short_gi = False   # use short GI or not
+   stbc = 1           # stbc streams: 1, 2, 3 or 0 if unused
+   mcs_index = 1      # mcs index
+
+   [gs_mavlink]
+   bandwidth = 20     # bandwidth 20 or 40 MHz
+   short_gi = False   # use short GI or not
+   stbc = 1           # stbc streams: 1, 2, 3 or 0 if unused
+   mcs_index = 1      # mcs index
+   ```
+   
 5. Configure mavlink-router to connect to 127.0.0.1:14550 on the drone:
    ```
    [UdpEndpoint wifibroadcast]
