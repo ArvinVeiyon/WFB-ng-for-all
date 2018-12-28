@@ -13,9 +13,9 @@ where ``wlan0`` is name of your card
 
 3. Run ``scripts/rx_standalone.sh wlan1`` on RX host
 
-4. Run ``nc -u 5600`` on RX host
+4. Run ``nc -lu 5600`` on RX host
 
-5. Run ``echo test | nc -u localhost 5600`` on TX host
+5. Run ``echo test | nc -u 127.0.0.1 5600`` on TX host
 
 If you got ``test`` message - debug video pipeline.
 
