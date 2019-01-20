@@ -22,7 +22,7 @@ How to install WFB with bidirectional mavlink telemetry
    # peer = 'connect://127.0.0.1:14550'  # outgoing connection
 
    [drone_video]
-   peer = 'listen://0.0.0.0:5600'  # listen for video stream (gstreamer on drone)
+   peer = 'listen://0.0.0.0:5602'  # listen for video stream (gstreamer on drone)
    ```
    With this settings WFB will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
 
