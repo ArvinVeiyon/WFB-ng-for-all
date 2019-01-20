@@ -12,7 +12,8 @@ How to install WFB with bidirectional mavlink telemetry
    # peer = 'listen://0.0.0.0:14550'   # incoming connection
 
    [gs_video]
-   peer = 'connect://127.0.0.1:5600'  # outgoing connection for video sink (QGroundControl on GS)
+   peer = 'connect://127.0.0.1:5600'  # outgoing connection for
+                                      # video sink (QGroundControl on GS)
    ```
    for drone:
    ```
