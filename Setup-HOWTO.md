@@ -8,14 +8,20 @@ How to install WFB with bidirectional mavlink telemetry
    for gs:
    ```
    [gs_mavlink]
-   listen = None      # udp port for incoming connection, conflicts with 'connect'
-   connect = 14550    # udp port for outgoing connection, conflicts with 'listen'
+   peer = 'connect://127.0.0.1:14550'  # outgoing connection
+   # peer = 'listen://0.0.0.0:14550'   # incoming connection
+
+   [gs_video]
+   peer = 'connect://127.0.0.1:5600'  # outgoing connection for video sink (QGroundControl on GS)
    ```
    for drone:
    ```
    [drone_mavlink]
-   listen = 14550
-   connect = None
+   peer = 'listen://0.0.0.0:14550'   # incoming connection
+   # peer = 'connect://127.0.0.1:14550'  # outgoing connection
+
+   [drone_video]
+   peer = 'listen://0.0.0.0:5600'  # listen for video stream (gstreamer on drone)
    ```
    With this settings WFB will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
 
