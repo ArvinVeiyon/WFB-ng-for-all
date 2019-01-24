@@ -1,12 +1,14 @@
-The following chipsets were tested with wifibroadcast (used by author):
-  - Ralink RT3572 (ALFA AWUS051NH v2). Use it for TX
-  - Ralink RT5572 (CSL 300Mbit Stick, GWF-4M02 OEM modules). Use it for RX
+Supported WiFi hardware:
+------------------------
+My primary hardware targets are:
+1. Realtek **RTL8812au**. 802.11ac capable. Easy to buy. [**Requires external patched driver!**](https://github.com/svpcom/rtl8812au)  System was tested with ALPHA AWUS036ACH on both sides in 5GHz mode.
+2. Ralink RT28xx family. Cheap, but doesn't produced anymore. System was tested with ALPHA AWUS051NH v2 as TX and array of RT5572 OEM cards as RX in 5GHz mode.
 
-The following Atheros chipsets should work:
+The following Atheros chipsets should work (not used by author):
 
  -  Atheros AR9271, Atheros AR9280, Atheros AR9287
 
-The following Ralink chipsets should work:
+The following Ralink chipsets should work (not used by author):
 
  -  RT2070, RT2770, RT2870, RT3070, RT3071, RT3072, RT3370, RT3572, RT5370, RT5372, RT5572
 
