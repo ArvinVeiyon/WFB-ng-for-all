@@ -4,6 +4,16 @@ How to install WFB with bidirectional mavlink telemetry
 2. Install python-twisted package. Build tgz, deb or rpm package (see README.md) according to your linux distro and install it.
 3. Generate encryption keys for ground station and drone: `wfb_keygen`. You need to put `gs.key` to `/etc/gs.key` on the ground station and `drone.key` to `/etc/drone.key` on the drone.
 4. Create `/etc/wifibroadcast.cfg` with following content:
+   both for gs and drone:
+   ```
+   [common]
+   wifi_channel = 161     # 161 -- radio channel @5825 MHz, range: 5815–5835 MHz, width 20MHz
+                          # 1 -- radio channel @2412 Mhz, 
+                          # see https://en.wikipedia.org/wiki/List_of_WLAN_channels for reference
+   wifi_region = 'BO'     # Your country for CRDA (use BO or GY if you want max tx power)  
+   ```
+
+   **Please note that radio band (2.4 or 5.8 GHz) depends on your wifi adapter model and used antennas!**
 
    for gs:
    ```
