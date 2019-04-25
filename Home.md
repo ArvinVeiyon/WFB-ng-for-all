@@ -26,7 +26,7 @@ Q: Is only Raspberry PI supported?
 
 A: Wifibroadcast is not tied to any GPU - it operates with UDP packets. But to get RTP stream you need a video encoder (with encode raw data from camera to x264 stream). In my case RPI is only used for video encoding (becase RPI Zero is too slow to do anything else) and all other tasks (including wifibroadcast) are done by other board (NanoPI NEO2).
 
-Q: I'm unable to setup WFB and want immediate help
+Q: I'm unable to setup WFB and want immediate help!
 
 A: [See License and Support](License-and-Support)
 
