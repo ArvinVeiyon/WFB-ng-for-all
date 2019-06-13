@@ -1,6 +1,6 @@
 How to install WFB with bidirectional mavlink telemetry and IPoverWB
 --------------------------------------------------------------------
-1. Patch kernel for **ralink** cards (use `patches/nanopi-neo2-4.14.52-crda-disable.patch`) or install [patched driver](https://github.com/svpcom/rtl8812au) for **realtek** cards.
+1. Patch kernel for **ralink** cards (use `patches/nanopi-neo2-4.14.52-crda-disable.patch`) or install [patched driver **v5.2.20**](https://github.com/svpcom/rtl8812au) for **realtek** cards.
 2. Install python-twisted package. Build tgz, deb or rpm package (see README.md) according to your linux distro and install it.
 3. Generate encryption keys for ground station and drone: `wfb_keygen`. You need to put `gs.key` to `/etc/gs.key` on the ground station and `drone.key` to `/etc/drone.key` on the drone.
 4. Create `/etc/wifibroadcast.cfg` with following content:
