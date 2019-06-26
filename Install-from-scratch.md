@@ -39,8 +39,8 @@ or install binary packages from you linux distro.
    Please follow wiki here:
    https://github.com/svpcom/wifibroadcast/wiki/Setup-HOWTO
 
-   Create /etc/wifibroadcast.cfg
-   modify the wifi device(s) to use in /etc/default/wifibroadcast
+   Create `/etc/wifibroadcast.cfg`
+   modify the wifi device(s) to use in `/etc/default/wifibroadcast`
 
 4. Troubleshooting
 
