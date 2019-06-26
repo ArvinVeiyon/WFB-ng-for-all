@@ -1,6 +1,3 @@
-Install Wifibroadcast from scratch
-----------------------------------
-
 1. Install libsodium
 You can download and build sources from https://download.libsodium.org/doc/installation#integrity-checking
 or install binary packages from you linux distro.
