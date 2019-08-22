@@ -2,7 +2,7 @@ If your video pipeline doesn't work, before opening new issue please
 try following steps:
 
 1. Ensure that NetworkManager is **disabled** or there is **line** in `/etc/NetworkManager/NetworkManager.conf`
-**both on TX and RX**:
+**both on TX and RX**. Without this **rtl88xxau driver may not receive any packets** (tested on ubuntu-18.04):
 ```
 [keyfile]
 unmanaged-devices=interface-name:wlan0
