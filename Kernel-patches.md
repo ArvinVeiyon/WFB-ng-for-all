@@ -12,4 +12,4 @@ There are patches:
 
 My HW setup is RT3572 (rt2800 driver) and RTL8812AU (https://github.com/svpcom/rtl8812au) in 5GHz band. If you have experience with other HW - pull requests are welcome.
 
-If you have recent mainline kernel (4.x) you don't need [2] (it already here). [1] and [3] are optional and needed only to increase transmit range and channel bandwidth.
+**If you have recent mainline kernel (4.x) you don't need [2] (it already here). [1] and [3] are optional and needed only to increase transmit range and channel bandwidth.**
