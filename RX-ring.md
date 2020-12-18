@@ -7,6 +7,8 @@ When we receive a new packet it can belongs to:
 1. New fec block - we need to allocate it in RX ring (do nothing if block was already processed)
 2. Already existing fec block - we need to add it to them (do nothing if packet already processed)
 
+If we successfully decode all fragments from the block the we remove ALL unfinished blocks before it.
+
 When we allocate a new block we have following choices:
 1. Add a new block to rx ring tail.
 2. Override a block at rx ring head if rx ring is full.
