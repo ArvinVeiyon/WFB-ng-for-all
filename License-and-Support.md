@@ -10,4 +10,4 @@ GNU General Public License for more details.
 
 **TL;DR -- this is an Open Source project.**
 1. If you are developer - the best help is submitting a pull request with bugfix or with a new feature. 
-2. If you are end user - you can submit bugreport, feature request, make donation (for example https://salt.bountysource.com/teams/wifibroadcast) or find developer who can fix a bug or add feature you need.
+2. If you are end user - you can submit bugreport, feature request or find developer who can fix a bug or add feature you need.
