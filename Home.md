@@ -9,7 +9,7 @@
  - Enhanced [OSD](https://github.com/svpcom/wifibroadcast_osd) for Raspberry PI (consume 10% CPU on PI Zero)
    Compatible with any screen resolution. Supports aspect correction for PAL to HD scaling.
 
-## [Setup HOWTO](../Setup-HOWTO)
+## [Setup HOWTO](Setup-HOWTO)
 ## FAQ
 Q: What is a difference from original wifibroadcast?
 
