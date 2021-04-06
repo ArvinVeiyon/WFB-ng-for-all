@@ -78,6 +78,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoverWB
    unmanaged-devices=interface-name:wlan0
    ```
    to ignore WFB interface. **Disable wpa_supplicant and other daemons on WFB wlan interface!** Use `ps uaxwwww | grep wlan` to check.
+   Double check that card is in **unmanaged state** in nmcli output and `ifconfig wlanXX` **doesn't show any address and card state is down**.
 8. Do `systemctl daemon-reload`, `systemctl start wifibroadcast@gs` on the GS and `systemctl start wifibroadcast@drone` on the drone.
 9. Run `wfb-cli` on GS to monitor link state
 10. For IPoverWB (IPv4 over Wifibroadcast tunnel) you need only tun/tap kernel driver (tun.ko).
