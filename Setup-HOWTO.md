@@ -1,6 +1,8 @@
 How to install WFB with bidirectional mavlink telemetry and IPoverWB
 --------------------------------------------------------------------
-1. Patch kernel for **ralink** cards (use `patches/nanopi-neo2-4.14.52-crda-disable.patch`) or install [patched driver **v5.6.4.2**](https://github.com/svpcom/rtl8812au) for **realtek** cards. 
+1. Install [patched driver **v5.6.4.2**](https://github.com/svpcom/rtl8812au) for **realtek** cards.
+
+   **Don't use ralink (rt28xx) cards with 5.x kernels - they have broken injection (became too slow)**
 
    **Check that stock realtek driver (if exists) is disabled!** Remove it from /lib/modules and rebuild initramfs. Check with `ethtool -i wlanXX` that drivers version is empty (it will equal to kernel version for stock driver and empty for patched driver).  **NVIDIA Jetson has stock rtl8812au installed. You need to remove it!**
 2. Install python-twisted package. Build tgz, deb or rpm package (see README.md) according to your linux distro and install it.
