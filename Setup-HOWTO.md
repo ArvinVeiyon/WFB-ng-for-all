@@ -87,3 +87,19 @@ How to install WFB with bidirectional mavlink telemetry and IPoverWB
     Tunnel will be configured and work out of box. Drone side will have ``10.5.0.2/24`` address and GS - ``10.5.0.1/24``.
     Please note that tunnel use **less efficient coding rate** (to minimize latency) than video and mavlink streams and use it only for low-bandwidth traffic (like ssh), not as general link for video and telemetry streams.
 11. On the ground station you can specify **multiple nics** (in /etc/default/wifibroadcast) if you have **multiple adapters** with directed and/or omnidirected antennas. TX adapter will be selected using RSSI of RX signal. In case of rtl8812au cards with two antennas you can enable STBC to use both of them for tx simultaneously.
+12. If you got errors like:
+    ```
+    2021-12-28 14:57:15+0700 [-] Log opened.
+    2021-12-28 14:57:15+0700 [-] # iw reg set BO
+    2021-12-28 14:57:15+0700 [-] # ifconfig wlan1 down
+    2021-12-28 14:57:16+0700 [-] # iw dev wlan1 set monitor otherbss
+    2021-12-28 14:57:16+0700 [-] SIOCSIFFLAGS: Operation not possible due to RF-kill
+    2021-12-28 14:57:16+0700 [-] Stopping reactor due to fatal error: RC 255: ifconfig wlan1 up
+    2021-12-28 14:57:16+0700 [-] Main loop terminated.
+    2021-12-28 14:57:16+0700 [-] Exiting with code 1
+    ```
+    then you need to disable RFKill:
+    ```
+    rfkill list all
+    sudo rfkill unblock all
+    ```
