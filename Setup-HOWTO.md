@@ -4,7 +4,13 @@ How to install WFB with bidirectional mavlink telemetry and IPoverWB
 
    **Don't use ralink (rt28xx) cards with 5.x kernels - they have broken injection (became too slow)**
 
-   **Check that stock realtek driver (if exists) is disabled!** Remove it from /lib/modules and rebuild initramfs. Check with `ethtool -i wlanXX` that drivers version is empty (it will equal to kernel version for stock driver and empty for patched driver).  **NVIDIA Jetson has stock rtl8812au installed. You need to remove it!**
+   **Check that stock realtek driver (if exists) is disabled!** To disable add it to the blacklist
+   ```
+   cat > /etc/modprobe.d/blacklist-wfb.conf <<EOF
+   blacklist 88XXau
+   EOF
+   ```
+   rebuild initramfs (`update-initramfs -k all -u`) and reboot. Check with `ethtool -i wlanXX` that drivers version is empty (it will equal to kernel version for stock driver and empty for patched driver).  **NVIDIA Jetson has stock rtl8812au installed. You need to remove it!**
 2. Install python-twisted package. Build tgz, deb or rpm package (see README.md) according to your linux distro and install it.
 3. Generate encryption keys for ground station and drone: `wfb_keygen`. You need to put `gs.key` to `/etc/gs.key` on the ground station and `drone.key` to `/etc/drone.key` on the drone.
 4. Add `net.core.bpf_jit_enable = 1` to /etc/sysctl.conf. Reload sysctl.
