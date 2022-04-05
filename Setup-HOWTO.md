@@ -39,7 +39,10 @@ How to install WFB with bidirectional mavlink telemetry and IPoverWB
    for drone:
    ```
    [drone_mavlink]
-   peer = 'listen://0.0.0.0:14550'   # incoming connection
+   # use autopilot connected to /dev/ttyUSB0 at 115200 baud:
+   peer = 'serial:ttyUSB0:115200'
+   # Connect to autopilot via malink-router or mavlink-proxy:
+   # peer = 'listen://0.0.0.0:14550'   # incoming connection
    # peer = 'connect://127.0.0.1:14550'  # outgoing connection
 
    [drone_video]
