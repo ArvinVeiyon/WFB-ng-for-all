@@ -14,7 +14,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
 2. Install python-twisted package. Build tgz, deb or rpm package (see README.md) according to your linux distro and install it.
 3. Generate encryption keys for ground station and drone: `wfb_keygen`. You need to put `gs.key` to `/etc/gs.key` on the ground station and `drone.key` to `/etc/drone.key` on the drone.
 4. Add `net.core.bpf_jit_enable = 1` to /etc/sysctl.conf. Reload sysctl.
-   Create `/etc/wifibroadcast.cfg` with following content:
+5. Create `/etc/wifibroadcast.cfg` with following content:
    both for gs and drone:
    ```
    [common]
@@ -72,16 +72,11 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
    stbc = 1           # stbc streams: 1, 2, 3 or 0 if unused
    mcs_index = 1      # mcs index
    ```
-   
-5. Configure [mavlink-router](https://github.com/intel/mavlink-router) to connect to 127.0.0.1:14550 on the drone:
-   ```
-   [UdpEndpoint wifibroadcast]
-   Mode = Normal
-   Address = 127.0.0.1
-   Port = 14550
-   ```
-   and use QGroundControl on the GS.
    See `telemetry/conf/master.cfg` for all available options and default values.
+
+5. GS setup options:
+     - Use QGroundControl (for video, telemetry and control)
+     - Use QGroundControl (for telemetry and control) + [WifibroadcastOSD](https://github.com/svpcom/wifibroadcast_osd) (for video and OSD) on the GS. You need to disable video display in QGroundcontrol to avoid conflict
 6. Setup RTP video streaming on the drone to udp://127.0.0.1:5602 or redefine listen port in `/etc/wifibroadcast.cfg` (see `telemetry/conf/master.cfg` for reference)
 7. Edit `/etc/default/wifibroadcast` and repace `wlan0` with proper wifi interface name. Also add to `/etc/NetworkManager/NetworkManager.conf` following section:
    ```
