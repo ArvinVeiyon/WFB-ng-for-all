@@ -1,4 +1,4 @@
-How to install WFB with bidirectional mavlink telemetry and IPoverWB
+How to install WFB with bidirectional mavlink telemetry and IPoWB
 --------------------------------------------------------------------
 1. Install [patched driver **v5.6.4.2**](https://github.com/svpcom/rtl8812au) for **realtek** cards.
 
@@ -92,7 +92,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoverWB
    Double check that card is in **unmanaged state** in nmcli output and `ifconfig wlanXX` **doesn't show any address and card state is down**.
 8. Do `systemctl daemon-reload`, `systemctl start wifibroadcast@gs` on the GS and `systemctl start wifibroadcast@drone` on the drone.
 9. Run `wfb-cli gs` on the GS side to monitor link state
-10. For IPoverWB (IPv4 over Wifibroadcast tunnel) you need only tun/tap kernel driver (tun.ko).
+10. For IPoWB (IPv4 over Wifibroadcast tunnel) you need only tun/tap kernel driver (tun.ko).
     Tunnel will be configured and work out of box. Drone side will have ``10.5.0.2/24`` address and GS - ``10.5.0.1/24``.
     Please note that tunnel use **less efficient coding rate** (to minimize latency) than video and mavlink streams and use it only for low-bandwidth traffic (like ssh), not as general link for video and telemetry streams.
 11. On the ground station you can specify **multiple nics** (in /etc/default/wifibroadcast) if you have **multiple adapters** with directed and/or omnidirected antennas. TX adapter will be selected using RSSI of RX signal. In case of rtl8812au cards with two antennas you can enable STBC to use both of them for tx simultaneously.
