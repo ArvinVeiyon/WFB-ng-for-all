@@ -15,7 +15,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
 3. Generate encryption keys for ground station and drone: `wfb_keygen`. You need to put `gs.key` to `/etc/gs.key` on the ground station and `drone.key` to `/etc/drone.key` on the drone.
 4. Add `net.core.bpf_jit_enable = 1` to /etc/sysctl.conf. Reload sysctl.
 5. Create `/etc/wifibroadcast.cfg` with following content:
-   both for gs and drone:
+   common part for gs and drone:
    ```
    [common]
    wifi_channel = 161     # 161 -- radio channel @5825 MHz, range: 5815–5835 MHz, width 20MHz
@@ -26,7 +26,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
 
    **Please note that radio band (2.4 or 5.8 GHz) depends on your wifi adapter model and used antennas!**
 
-   for gs:
+   add to gs:
    ```
    [gs_mavlink]
    peer = 'connect://127.0.0.1:14550'  # outgoing connection
@@ -36,7 +36,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
    peer = 'connect://127.0.0.1:5600'  # outgoing connection for
                                       # video sink (QGroundControl on GS)
    ```
-   for drone:
+   add to drone:
    ```
    [drone_mavlink]
    # use autopilot connected to /dev/ttyUSB0 at 115200 baud:
