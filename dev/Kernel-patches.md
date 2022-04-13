@@ -1,5 +1,7 @@
-There is no "tx rate lock patch".
-There are patches:
+**For [patched RTL8812AU driver](https://github.com/svpcom/rtl8812au) no any additional kernel patches needed!**
+
+For other drivers you may need following patches:
+
 1. tx power lock (via CRDA).
 2. ~~tx rate for injected packets (obsolete)~~
 3. ~~tx timeslot patch (for one-way transmit only).~~
