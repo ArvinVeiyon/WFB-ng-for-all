@@ -1,6 +1,3 @@
-RX Ring
-=======
-
 rx_ring is a circular buffer, where we store packets, grouped by FEC blocks. It has two variables: *rx_ring_front* (index of the first allocated FEC block) and *alloc_size* -- number of allocated blocks. So rx_ring is like a queue of FEC blocks (each block can hold up to N fragments) - we append new fragments to block(s) in the tail and fetch them from the head.  
 
 
