@@ -12,9 +12,11 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
    # blacklist stock module
    blacklist 88XXau
    # maximize output power
-   options 88XXau_wfb rtw_tx_pwr_idx_override=45
+   options 88XXau_wfb rtw_tx_pwr_idx_override=63  # see note below
    EOF
    ```
+   **Note:** I don't have RF power meter suitable for output power measurement, but via analyzing power consumption of wifi card I've found that maximum current consumption is with `rtw_tx_pwr_idx_override=63` (~1.6А in pulse). But some users say that maximum transmit distance is with `rtw_tx_pwr_idx_override=45`. This may be due to nonlinear amplifier distortion or due to measurement errors.
+
    rebuild initramfs (`update-initramfs -k all -u`) and reboot. Check with `ethtool -i wlanXX` that drivers version is empty (it will equal to kernel version for stock driver and empty for patched driver).  **NVIDIA Jetson has stock rtl8812au installed. You need to remove it!**
 2. Install python-twisted package. Build tgz, deb or rpm package (see README.md) according to your linux distro and install it.
 3. Generate encryption keys for ground station and drone: `wfb_keygen`. You need to put `gs.key` to `/etc/gs.key` on the ground station and `drone.key` to `/etc/drone.key` on the drone.
