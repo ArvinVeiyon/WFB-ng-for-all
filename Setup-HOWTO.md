@@ -1,12 +1,14 @@
 How to install WFB with bidirectional mavlink telemetry and IPoWB
 --------------------------------------------------------------------
-1. Install [patched driver **v5.2.20**](https://github.com/svpcom/rtl8812au) for **realtek** cards.
+1. Install [**patched** driver **v5.2.20**](https://github.com/svpcom/rtl8812au) for **realtek** cards.
 
-   **Don't use ralink (rt28xx) cards with 5.x kernels - they have broken injection (became too slow)**
+   - Don't use **ralink (rt28xx)** cards with **5.x** kernels - they have **broken injection (became too slow)!**
 
-   **Realtek driver rtl8812au version v5.6.4.2 has low output power**
+   - Don't use driver **rtl8812au** version **v5.6.4.2** -- it has **low output power!**
 
-   **Check that stock realtek driver (if exists) is disabled!** To disable add it to the blacklist
+   - **Check that stock realtek driver (if exists) was disabled!**
+
+   To disable add it to the blacklist:
    ```
    cat > /etc/modprobe.d/wfb.conf <<EOF
    # blacklist stock module
