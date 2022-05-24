@@ -11,6 +11,7 @@
  - Provides IPv4 tunnel for generic usage
 
 ## [Setup HOWTO](Setup-HOWTO)
+## Community chat in Telegram: https://t.me/EZWBC
 ## FAQ
 Q: What is a difference from original wifibroadcast?
 
