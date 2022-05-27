@@ -1,3 +1,13 @@
+Check USB wiring
+----------------
+**Proper usb wiring is very important!**
+
+Cheap / thin / unshielded USB cables may issue strange behavior like a lot of FEC errors and lost packets!
+
+If possible use direct connection for wifi card `+5V` wire to the BEC (not to USB +5V).
+
+Also I recommend to add 470uF low ESR capacitor (like ESC has) between power and ground to filter voltage spikes. Be aware of [ground loop](https://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) when using several ground wires.
+
 How to install WFB with bidirectional mavlink telemetry and IPoWB
 --------------------------------------------------------------------
 1. Install [**patched** driver **v5.2.20**](https://github.com/svpcom/rtl8812au) for **realtek** cards.
