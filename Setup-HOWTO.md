@@ -14,7 +14,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
    # blacklist stock module
    blacklist 88XXau
    # maximize output power
-   options 88XXau_wfb rtw_tx_pwr_idx_override=63  # see note below
+   options 88XXau_wfb rtw_tx_pwr_idx_override=63
    EOF
    ```
    **Note:** I don't have RF power meter suitable for output power measurement, but via analyzing power consumption of wifi card I've found that maximum current consumption is with `rtw_tx_pwr_idx_override=63` (~1.6А in pulse). But some users say that maximum transmit distance is with `rtw_tx_pwr_idx_override=45`. This may be due to nonlinear amplifier distortion or due to measurement errors.
