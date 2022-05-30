@@ -10,6 +10,11 @@
    supports gstreamer (Linux X11, etc). Compatible with any screen resolution. Supports aspect correction for PAL to HD scaling.
  - Provides IPv4 tunnel for generic usage
 
+## Quick Start
+If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](https://github.com/svpcom/wifibroadcast/releases/download/wifibroadcast-22.05/wifibroadcast_22.05-rc2-rpi3.img.gz).
+
+Just flash it into the SD-card (8Gb or larger), ssh to the board and follow instructions on the screen.
+
 ## [Setup HOWTO](Setup-HOWTO)
 ## Community chat in Telegram: https://t.me/EZWBC
 ## FAQ
