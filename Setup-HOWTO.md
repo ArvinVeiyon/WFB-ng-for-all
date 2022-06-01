@@ -97,13 +97,21 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
      - Use QGroundControl (for video, telemetry and control)
      - Use QGroundControl (for telemetry and control) + [WifibroadcastOSD](https://github.com/svpcom/wifibroadcast_osd) (for video and OSD) on the GS. You need to disable video display in QGroundcontrol to avoid conflict
 6. Setup RTP video streaming on the drone to udp://127.0.0.1:5602 or redefine listen port in `/etc/wifibroadcast.cfg` (see `telemetry/conf/master.cfg` for reference)
-7. Edit `/etc/default/wifibroadcast` and repace `wlan0` with proper wifi interface name. Also add to `/etc/NetworkManager/NetworkManager.conf` following section:
-   ```
-   [keyfile]
-   unmanaged-devices=interface-name:wlan0
-   ```
-   to ignore WFB interface. **Disable wpa_supplicant and other daemons on WFB wlan interface!** Use `ps uaxwwww | grep wlan` to check.
-   Double check that card is in **unmanaged state** in nmcli output and `ifconfig wlanXX` **doesn't show any address and card state is down**.
+7. **Disable wpa_supplicant and other daemons on WFB wlan interface!** Use `ps uaxwwww | grep wlan` to check.
+
+    Double check that card is in **unmanaged state** in nmcli output and `ifconfig wlanXX` **doesn't show any address and card state is down**.
+
+   - Edit `/etc/default/wifibroadcast` and repace `wlan0` with proper wifi interface name. Also add to `/etc/NetworkManager/NetworkManager.conf` following section:
+     ```
+     [keyfile]
+     unmanaged-devices=interface-name:wlan0
+     ```
+
+   - If available `/etc/dhcpcd.conf` then edit it and add:
+     ```
+     denyinterfaces wlan0
+     ```
+   to ignore WFB interface.
 8. Do `systemctl daemon-reload`, `systemctl start wifibroadcast@gs` on the GS and `systemctl start wifibroadcast@drone` on the drone.
 9. Run `wfb-cli gs` on the GS side to monitor link state
 10. For IPoWB (IPv4 over Wifibroadcast tunnel) you need only tun/tap kernel driver (tun.ko).
