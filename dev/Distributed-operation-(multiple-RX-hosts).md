@@ -1,4 +1,4 @@
-Wifibroadcast supports distributed operation with multiple RX antennas on different hosts connected by IP network.
+WFB-NG supports distributed operation with multiple RX antennas on different hosts connected by IP network.
 
 To setup this you will need:
 1. Three [GWF-4M02](http://en.ogemray.com/product/product.php?t=4M02) WiFi modules + U.FL to RP-SMA pigtails (they are cheap but you need to order them from China) or [CSL 300Mbit Sticks](https://www.amazon.co.uk/high-performance-gold-plated-technology-Frequency-adjustable/dp/B00RTJW1ZM) (expensive but available on ebay)

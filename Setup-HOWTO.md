@@ -8,7 +8,7 @@ If possible use direct connection for wifi card `+5V` wire to the BEC (not to US
 
 Also I recommend to add 470uF low ESR capacitor (like ESC has) between power and ground to filter voltage spikes. Be aware of [ground loop](https://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) when using several ground wires.
 
-How to install WFB with bidirectional mavlink telemetry and IPoWB
+How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
 --------------------------------------------------------------------
 1. Install [**patched** driver **v5.2.20**](https://github.com/svpcom/rtl8812au) for **realtek** cards.
 
@@ -67,7 +67,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
    [drone_video]
    peer = 'listen://0.0.0.0:5602'  # listen for video stream (gstreamer on drone)
    ```
-   With this settings WFB will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
+   With this settings WFB-NG will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
 
    If you want to override default modulation type (MCS#1, long GI, 20MHz BW, STBC 1)
    you can do it for each stream. **Stream settings are independent**. You can use different modulation for each of them.
@@ -97,7 +97,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
      - Use QGroundControl (for video, telemetry and control)
      - Use QGroundControl (for telemetry and control) + [WifibroadcastOSD](https://github.com/svpcom/wifibroadcast_osd) (for video and OSD) on the GS. You need to disable video display in QGroundcontrol to avoid conflict
 6. Setup RTP video streaming on the drone to udp://127.0.0.1:5602 or redefine listen port in `/etc/wifibroadcast.cfg` (see `telemetry/conf/master.cfg` for reference)
-7. **Disable wpa_supplicant and other daemons on WFB wlan interface!** Use `ps uaxwwww | grep wlan` to check.
+7. **Disable wpa_supplicant and other daemons on WFB-NG wlan interface!** Use `ps uaxwwww | grep wlan` to check.
 
     Double check that card is in **unmanaged state** in nmcli output and `ifconfig wlanXX` **doesn't show any address and card state is down**.
 
@@ -111,7 +111,7 @@ How to install WFB with bidirectional mavlink telemetry and IPoWB
      ```
      denyinterfaces wlan0
      ```
-   to ignore WFB interface.
+   to ignore WFB-NG interface.
 8. Do `systemctl daemon-reload`, `systemctl start wifibroadcast@gs` on the GS and `systemctl start wifibroadcast@drone` on the drone.
 9. Run `wfb-cli gs` on the GS side to monitor link state
 10. For IPoWB (IPv4 over Wifibroadcast tunnel) you need only tun/tap kernel driver (tun.ko).
