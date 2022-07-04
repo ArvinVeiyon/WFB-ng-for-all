@@ -1,4 +1,4 @@
-## WiFiBroadcast is an opensource digital FPV and telemetry system.
+## WFB-NG is an opensource digital FPV and telemetry system.
 
 ## Main features:
  - 1:1 map RTP to IEEE80211 packets for minimum latency (doesn't serialize to byte steam)
