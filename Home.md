@@ -28,7 +28,7 @@ A: Any UDP with packet size <= 1466. For example x264 inside RTP or Mavlink.
 
 Q: What are transmission guarancies?
 
-A: Wifibrodcast use FEC (forward error correction) which can recover 4 lost packets from 12 packets block with default settings. You can tune it (both TX and RX simultaniuosly!) to fit your needs.
+A: WFB-NG use FEC (forward error correction) which can recover 4 lost packets from 12 packets block with default settings. You can tune it (both TX and RX simultaniuosly!) to fit your needs.
 
 Q: Is only Raspberry PI supported?
 
