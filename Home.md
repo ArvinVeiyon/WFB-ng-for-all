@@ -22,7 +22,7 @@ Q: What is a difference from original wifibroadcast?
 
 A: Original version of wifibroadcast use a byte-stream as input and splits it to packets of fixed size (1024 by default). If radio packet was lost and this is not corrected by FEC you'll got a hole at random (unexpected) place of stream. This is especially bad if data protocol is not resistent to (was not desired for) such random erasures. So i've rewrite it to use UDP as data source and pack one source UDP packet into one radio packet. Radio packets now have variable size depends on payload size. This is reduces a video latency a lot.
 
-Q: What type of data can be transmitted using wifibroadcast?
+Q: What type of data can be transmitted using WFB-NG?
 
 A: Any UDP with packet size <= 1466. For example x264 inside RTP or Mavlink.
 
@@ -32,9 +32,9 @@ A: Wifibrodcast use FEC (forward error correction) which can recover 4 lost pack
 
 Q: Is only Raspberry PI supported?
 
-A: Wifibroadcast is not tied to any GPU - it operates with UDP packets. But to get RTP stream you need a video encoder (with encode raw data from camera to x264 stream). In my case RPI is only used for video encoding (becase RPI Zero is too slow to do anything else) and all other tasks (including wifibroadcast) are done by other board (NanoPI NEO2).
+A: WFB-NG is not tied to any GPU - it operates with UDP packets. But to get RTP stream you need a video encoder (with encode raw data from camera to x264 stream). In my case RPI is only used for video encoding (becase RPI Zero is too slow to do anything else) and all other tasks (including WFB-NG) are done by other board (NanoPI NEO2).
 
-Q: I'm unable to setup WFB and want immediate help!
+Q: I'm unable to setup WFB-NG and want immediate help!
 
 A: [See License and Support](License-and-Support)
 
