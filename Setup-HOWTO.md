@@ -23,6 +23,9 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    cat > /etc/modprobe.d/wfb.conf <<EOF
    # blacklist stock module
    blacklist 88XXau
+   blacklist 8812au
+   blacklist rtl8812au
+   blacklist rtl88x2bs
    # maximize output power, see note below
    options 88XXau_wfb rtw_tx_pwr_idx_override=30
    EOF
