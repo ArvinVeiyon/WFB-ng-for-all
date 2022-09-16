@@ -12,6 +12,6 @@ For other drivers you may need following patches:
 
 [3] ~~removes most of tx timeslot guard intervals to maximize throughput. Use it **only** if you needed one-directional broadcast of video and telemetry. It is **not compatible** with two-way telemetry.  https://en.wikipedia.org/wiki/Extended_interframe_space~~
 
-My HW setup is RT3572 (rt2800 driver) and RTL8812AU (https://github.com/svpcom/rtl8812au) in 5GHz band. If you have experience with other HW - pull requests are welcome.
+My HW setup is ~~RT3572 (rt2800 driver) and~~ RTL8812AU (https://github.com/svpcom/rtl8812au) in 5GHz band. If you have experience with other HW - pull requests are welcome.
 
 **If you have recent mainline kernel (4.x) you don't need [2] (it already here). [1] and [3] are optional and needed only to increase transmit range and channel bandwidth.**
