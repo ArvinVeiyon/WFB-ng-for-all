@@ -23,7 +23,7 @@ or install binary packages from you linux distro.
 
    ```
    cd ~
-   git clone https://github.com/svpcom/wifibroadcast.git
+   git clone https://github.com/svpcom/wifibroadcast.git --branch stable
    cd wifibroadcast
    make deb
    ```
