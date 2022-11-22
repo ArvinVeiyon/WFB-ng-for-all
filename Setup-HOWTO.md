@@ -6,7 +6,7 @@ Cheap / thin / unshielded USB cables may issue strange behavior like a lot of FE
 
 If possible use direct connection for wifi card `+5V` wire to the BEC (not to USB +5V).
 
-Also I recommend to add 470uF low ESR capacitor (like ESC has) between power and ground to filter voltage spikes. Be aware of [ground loop](https://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) when using several ground wires.
+Also I recommend to add 470 - 1000uF low ESR capacitor (like ESC has) between power and ground to filter voltage spikes. Be aware of [ground loop](https://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) when using several ground wires.
 
 How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
 --------------------------------------------------------------------
