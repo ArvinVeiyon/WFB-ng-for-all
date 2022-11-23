@@ -11,7 +11,7 @@
  - Provides IPv4 tunnel for generic usage
 
 ## Quick Start
-If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](https://github.com/svpcom/wfb-ng/releases/download/wifibroadcast-22.05/wifibroadcast_22.05-rc2-rpi3.img.gz).
+If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](https://github.com/svpcom/wfb-ng/releases/download/wifibroadcast-22.09/wifibroadcast_22.09-rpi3.img.gz).
 
 Just flash it into the SD-card (8Gb or larger), ssh to the board and follow instructions on the screen.
 
