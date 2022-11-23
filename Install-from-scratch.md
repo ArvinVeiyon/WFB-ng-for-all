@@ -23,7 +23,7 @@ or install binary packages from you linux distro.
 
    ```
    cd ~
-   git clone https://github.com/svpcom/wifibroadcast.git --branch stable
+   git clone https://github.com/svpcom/wfb-ng.git --branch stable
    cd wifibroadcast
    make deb
    ```
@@ -37,7 +37,7 @@ or install binary packages from you linux distro.
 3. Configure:
 
    Please follow wiki here:
-   https://github.com/svpcom/wifibroadcast/wiki/Setup-HOWTO
+   https://github.com/svpcom/wfb-ng/wiki/Setup-HOWTO
 
    Create `/etc/wifibroadcast.cfg`
    modify the wifi device(s) to use in `/etc/default/wifibroadcast`

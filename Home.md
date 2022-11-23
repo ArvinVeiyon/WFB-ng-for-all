@@ -6,12 +6,12 @@
  - Stream encryption and authentication ([libsodium](https://download.libsodium.org/doc/))
  - Distributed operation. It can gather data from cards on different hosts. So you don't limited to bandwidth of single USB bus.
  - Aggreagation of mavlink packets. Doesn't send wifi packet for every mavlink packet.
- - Enhanced [OSD](https://github.com/svpcom/wifibroadcast_osd) for Raspberry PI (consume 10% CPU on PI Zero) or any other system which
+ - Enhanced [OSD](https://github.com/svpcom/wfb-ng-osd) for Raspberry PI (consume 10% CPU on PI Zero) or any other system which
    supports gstreamer (Linux X11, etc). Compatible with any screen resolution. Supports aspect correction for PAL to HD scaling.
  - Provides IPv4 tunnel for generic usage
 
 ## Quick Start
-If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](https://github.com/svpcom/wifibroadcast/releases/download/wifibroadcast-22.05/wifibroadcast_22.05-rc2-rpi3.img.gz).
+If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](https://github.com/svpcom/wfb-ng/releases/download/wifibroadcast-22.05/wifibroadcast_22.05-rc2-rpi3.img.gz).
 
 Just flash it into the SD-card (8Gb or larger), ssh to the board and follow instructions on the screen.
 
@@ -40,7 +40,7 @@ Q: I'm unable to setup WFB-NG and want immediate help!
 A: [See License and Support](License-and-Support)
 
 ## Theory
-[Analysis of Injection Capabilities and Media Access of IEEE 802.11 Hardware in Monitor Mode](https://github.com/svpcom/wifibroadcast/blob/master/patches/Analysis%20of%20Injection%20Capabilities%20and%20Media%20Access%20of%20IEEE%20802.11%20Hardware%20in%20Monitor%20Mode.pdf)
+[Analysis of Injection Capabilities and Media Access of IEEE 802.11 Hardware in Monitor Mode](https://github.com/svpcom/wfb-ng/blob/master/patches/Analysis%20of%20Injection%20Capabilities%20and%20Media%20Access%20of%20IEEE%20802.11%20Hardware%20in%20Monitor%20Mode.pdf)
 
 ## TODO
 1. Write user docs. Pull requests are welcome.

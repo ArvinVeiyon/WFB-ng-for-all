@@ -12,8 +12,8 @@ Please note that this guide hasn’t been thoroughly tested and flushed out yet,
 References:
 
 - https://dev.px4.io/v1.9.0/en/qgc/video_streaming_wifi_broadcast.html
-- https://github.com/svpcom/wifibroadcast/wiki/Install-from-scratch
-- https://github.com/svpcom/wifibroadcast/wiki/Setup-HOWTO
+- https://github.com/svpcom/wfb-ng/wiki/Install-from-scratch
+- https://github.com/svpcom/wfb-ng/wiki/Setup-HOWTO
 - https://github.com/intel/mavlink-router
 - https://www.instructables.com/id/Step-by-step-Guidance-to-Build-a-Drone-From-Scratc/
 - https://community.emlid.com/t/estimation-of-feasibility-ez-wbc-on-navio2-rp3b/12274
@@ -37,7 +37,7 @@ Download, build, and install wifibroadcast:
 
 ```
 cd ~
-git clone https://github.com/svpcom/wifibroadcast.git
+git clone https://github.com/svpcom/wfb-ng.git
 cd wifibroadcast
 make deb
 cd deb_dist
@@ -139,7 +139,7 @@ Download, build, and install wifibroadcast:
 
 ```
 cd ~
-git clone https://github.com/svpcom/wifibroadcast.git
+git clone https://github.com/svpcom/wfb-ng.git
 cd wifibroadcast
 make deb
 cd deb_dist

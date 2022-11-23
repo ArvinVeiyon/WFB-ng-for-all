@@ -98,7 +98,7 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
 
 5. GS setup options:
      - Use QGroundControl (for video, telemetry and control)
-     - Use QGroundControl (for telemetry and control) + [WifibroadcastOSD](https://github.com/svpcom/wifibroadcast_osd) (for video and OSD) on the GS. You need to disable video display in QGroundcontrol to avoid conflict
+     - Use QGroundControl (for telemetry and control) + [WifibroadcastOSD](https://github.com/svpcom/wfb-ng-osd) (for video and OSD) on the GS. You need to disable video display in QGroundcontrol to avoid conflict
 6. Setup RTP video streaming on the drone to udp://127.0.0.1:5602 or redefine listen port in `/etc/wifibroadcast.cfg` (see `telemetry/conf/master.cfg` for reference)
 7. **Disable wpa_supplicant and other daemons on WFB-NG wlan interface!** Use `ps uaxwwww | grep wlan` to check.
 
