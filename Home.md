@@ -16,7 +16,7 @@ If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](
 Just flash it into the SD-card (8Gb or larger), ssh to the board and follow instructions on the screen.
 
 ## [Setup HOWTO](Setup-HOWTO)
-## Telegram group: (**wfb-ng support**) https://t.me/+uT7ziDLV4I5kZmUy
+## Telegram group: (**wfb-ng support**) https://t.me/wfb_ng
 Please note, that it is only one official group.
 ## FAQ
 Q: What is a difference from original wifibroadcast?
