@@ -72,6 +72,8 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    ```
    With this settings WFB-NG will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
 
+   Mention please that this is a configuration for UDP that do not offers `connections`, but if you launch QGroundControl and it will listen for incoming UDP packets, then it will be able to send back replies to UDP source. So we can speak about bidirectional connection.
+
    If you want to override default modulation type (MCS#1, long GI, 20MHz BW, STBC 1)
    you can do it for each stream. **Stream settings are independent**. You can use different modulation for each of them.
    For example:

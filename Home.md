@@ -1,5 +1,7 @@
 ## WFB-NG is an opensource digital FPV and telemetry system.
 
+This project can be used to create a video and control link between drone and regular laptop with commodity wifi hardware.
+
 ## Main features:
  - 1:1 map RTP to IEEE80211 packets for minimum latency (doesn't serialize to byte steam)
  - Smart FEC support (immediately yeild packet to video decoder if FEC pipeline without gaps)
@@ -11,7 +13,7 @@
  - Provides IPv4 tunnel for generic usage
 
 ## Quick Start
-If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](https://github.com/svpcom/wfb-ng/releases/download/wifibroadcast-22.09/wifibroadcast_22.09-rpi3.img.xz).
+If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](https://github.com/svpcom/wfb-ng/releases/download/wfb-ng-23.01/wfb-ng_23.01-rpi3.img.xz).
 
 Just flash it into the SD-card (8Gb or larger), ssh to the board and follow instructions on the screen.
 
