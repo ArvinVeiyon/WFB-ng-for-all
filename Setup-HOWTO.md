@@ -72,8 +72,9 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    peer = 'listen://0.0.0.0:5602'  # listen for video stream (gstreamer on drone)
    ```
    With this settings WFB-NG will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
+   
    Select autopilot telemetry connection via uart or via udp.
-   **NOTE** If you selected uart and its device is not available then **wfb-ng will not start!**
+   If you selected uart and its device is not available then **wfb-ng will not start!**
 
    Mention please that this is a configuration for UDP that do not offers `connections`, but if you launch QGroundControl and it will listen for incoming UDP packets, then it will be able to send back replies to UDP source. So we can speak about bidirectional connection.
 
