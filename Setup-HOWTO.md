@@ -62,7 +62,8 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    ```
    [drone_mavlink]
    # use autopilot connected to /dev/ttyUSB0 at 115200 baud:
-   peer = 'serial:ttyUSB0:115200'
+   # peer = 'serial:ttyUSB0:115200'
+
    # Connect to autopilot via malink-router or mavlink-proxy:
    # peer = 'listen://0.0.0.0:14550'   # incoming connection
    # peer = 'connect://127.0.0.1:14550'  # outgoing connection
@@ -71,6 +72,8 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    peer = 'listen://0.0.0.0:5602'  # listen for video stream (gstreamer on drone)
    ```
    With this settings WFB-NG will listen on port 14550 on drone and connect to udp://127.0.0.1:14550 on GS.
+   Select autopilot telemetry connection via uart or via udp.
+   **NOTE** If you selected uart and its device is not available then **wfb-ng will not start!**
 
    Mention please that this is a configuration for UDP that do not offers `connections`, but if you launch QGroundControl and it will listen for incoming UDP packets, then it will be able to send back replies to UDP source. So we can speak about bidirectional connection.
 
@@ -96,12 +99,12 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    stbc = 1           # stbc streams: 1, 2, 3 or 0 if unused
    mcs_index = 1      # mcs index
    ```
-   See `telemetry/conf/master.cfg` for all available options and default values.
+   See `wfb_ng/conf/master.cfg` for all available options and default values.
 
 5. GS setup options:
      - Use QGroundControl (for video, telemetry and control)
      - Use QGroundControl (for telemetry and control) + [WifibroadcastOSD](https://github.com/svpcom/wfb-ng-osd) (for video and OSD) on the GS. You need to disable video display in QGroundcontrol to avoid conflict
-6. Setup RTP video streaming on the drone to udp://127.0.0.1:5602 or redefine listen port in `/etc/wifibroadcast.cfg` (see `telemetry/conf/master.cfg` for reference)
+6. Setup RTP video streaming on the drone to udp://127.0.0.1:5602 or redefine listen port in `/etc/wifibroadcast.cfg` (see `wfb_ng/conf/master.cfg` for reference)
 7. **Disable wpa_supplicant and other daemons on WFB-NG wlan interface!** Use `ps uaxwwww | grep wlan` to check.
 
     Double check that card is in **unmanaged state** in nmcli output and `ifconfig wlanXX` **doesn't show any address and card state is down**.
