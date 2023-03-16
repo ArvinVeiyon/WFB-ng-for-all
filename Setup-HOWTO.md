@@ -33,8 +33,21 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    **Note:** I don't have RF power meter suitable for output power measurement, but via analyzing power consumption of wifi card I've found that maximum current consumption is with `rtw_tx_pwr_idx_override=63` (~1.6А in pulse). But some users say that maximum transmit distance is with `rtw_tx_pwr_idx_override=45`. This may be due to nonlinear amplifier distortion or due to measurement errors. **You can burn your card if set high power without active cooling!**
 
    rebuild initramfs (`update-initramfs -k all -u`) and reboot. Check with `ethtool -i wlanXX` that drivers version is empty (it will equal to kernel version for stock driver and empty for patched driver).  **NVIDIA Jetson has stock rtl8812au installed. You need to remove it!**
+
+   Take a look at udev rules to maintain stable naming on GS. It may be convenient to create something like:
+
+   ```
+   cat > /etc/udev/rules.d/65-persistent-net.rules <<EOF
+   SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="50:2b:73:00:0b:01",NAME="wfb0"
+   SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="04:42:1a:3c:86:33",NAME="wfb0"
+   EOF
+   ```
+
+   This will force naming for your NIC. Refer to udev rule documentation to create proper rules.
+   Don't forget to use proper name like `wlan0` or `wfb0` for your GS interface.
+
 2. Install python-twisted package. Build tgz, deb or rpm package (see README.md) according to your linux distro and install it.
-3. Generate encryption keys for ground station and drone: `wfb_keygen`. You need to put `gs.key` to `/etc/gs.key` on the ground station and `drone.key` to `/etc/drone.key` on the drone.
+3. Generate encryption keys for ground station and drone: `wfb_keygen`. You need to put `gs.key` to `/etc/gs.key` on the ground station and `drone.key` to `/etc/drone.key` on the drone. Mention that this script will regenerate key and delete old one. If you run it twice on GS, then you can lose your drone connectivity.
 4. Add `net.core.bpf_jit_enable = 1` to /etc/sysctl.conf. Reload sysctl.
 5. Create `/etc/wifibroadcast.cfg` with following content:
    common part for gs and drone:
