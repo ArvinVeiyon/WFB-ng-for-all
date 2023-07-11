@@ -4,9 +4,11 @@ Check USB wiring
 
 Cheap / thin / unshielded USB cables may issue strange behavior like a lot of FEC errors and lost packets!
 
-If possible use direct connection for wifi card `+5V` wire to the BEC (not to USB +5V).
+Always connect wifi card `+5V` wire to the BEC (not to USB +5V). Use at least 5A BEC for card power!
 
-Also I recommend to add 470 - 1000uF low ESR capacitor (like ESC has) between power and ground to filter voltage spikes. Be aware of [ground loop](https://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) when using several ground wires.
+Add >= 470uF low ESR capacitor (like ESC has, for example Panasinic EEUFR1V102) between power and ground to filter voltage spikes. Be aware of [ground loop](https://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) when using several ground wires.
+
+In any condition don't power up wifi card without antennas!
 
 How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
 --------------------------------------------------------------------
@@ -30,7 +32,8 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    options 88XXau_wfb rtw_tx_pwr_idx_override=30
    EOF
    ```
-   **Note:** I don't have RF power meter suitable for output power measurement, but via analyzing power consumption of wifi card I've found that maximum current consumption is with `rtw_tx_pwr_idx_override=63` (~1.6А in pulse). But some users say that maximum transmit distance is with `rtw_tx_pwr_idx_override=45`. This may be due to nonlinear amplifier distortion or due to measurement errors. **You can burn your card if set high power without active cooling!**
+   **Note1:** I don't have RF power meter suitable for output power measurement, but via analyzing power consumption of alfa awus036ach card I've found that maximum current consumption is with `rtw_tx_pwr_idx_override=63` (~1.6А in pulse). But some users say that maximum transmit distance is with `rtw_tx_pwr_idx_override=45`. This may be due to nonlinear amplifier distortion or due to measurement errors. **You can burn your card if set high power without active cooling!**
+   **Note2:** For "ac180 2W high power" card from aliexpress max value is **`rtw_tx_pwr_idx_override=30`**. Also it **requires** separate +5V power with BEC **>= 5A**, **Low ESR capacitor** and **active cooling** ! Without any of these requirements you will got unstable behavor and/or damage the card!
 
    rebuild initramfs (`update-initramfs -k all -u`) and reboot. Check with `ethtool -i wlanXX` that drivers version is empty (it will equal to kernel version for stock driver and empty for patched driver).  **NVIDIA Jetson has stock rtl8812au installed. You need to remove it!**
 
