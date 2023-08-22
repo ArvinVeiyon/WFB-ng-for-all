@@ -8,6 +8,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
-**TL;DR -- this is an Open Source project.**
+**TL;DR -- this is an Open Source project and provided as is without any warranty**
 1. If you are developer - the best help is submitting a pull request with bugfix or with a new feature. 
 2. If you are end user - you can submit bugreport, feature request or find developer who can fix a bug or add feature you need.
