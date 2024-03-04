@@ -18,6 +18,8 @@ If you have Raspberry PI 3/3B/3B+ then you can try to use [preconfigured image](
 Just flash it into the SD-card (8Gb or larger), ssh to the board and follow instructions on the screen.
 
 ## [Setup HOWTO](Setup-HOWTO)
+## Support wfb-ng development
+Please subscribe or make donation on https://boosty.to/svpcom
 ## Telegram group: (**wfb-ng support**) https://t.me/wfb_ng
 Please note, that it is only one official group.
 ## FAQ
