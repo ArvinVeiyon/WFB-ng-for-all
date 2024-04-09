@@ -11,7 +11,7 @@ Please note that this guide hasn’t been thoroughly tested and flushed out yet,
 
 References:
 
-- https://dev.px4.io/v1.9.0/en/qgc/video_streaming_wifi_broadcast.html
+- https://docs.px4.io/main/en/companion_computer/video_streaming_wfb_ng_wifi.html
 - https://github.com/svpcom/wfb-ng/wiki/Install-from-scratch
 - https://github.com/svpcom/wfb-ng/wiki/Setup-HOWTO
 - https://github.com/intel/mavlink-router
