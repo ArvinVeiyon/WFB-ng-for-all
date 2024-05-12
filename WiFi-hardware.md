@@ -1,10 +1,12 @@
 Supported WiFi hardware:
 ------------------------
 In theory wfb-ng can support any wifi hardware that supports packet injection and monitor modes.
-But injection quality in different drivers are **very different**. So now we officially support only cards on Realtek **RTL8812au** chipset.
+But injection quality in different drivers are **very different**. So now we officially support only cards on Realtek **RTL8812au** and **RTL8812eu** chipsets.
 Please note that 8811*, 8812bu, 8812cu or 8814au are different cards and not supported by author. They may work but it at your own risk.
 
-RTL8812au [**Requires external patched driver!**](https://github.com/svpcom/rtl8812au).  System was tested with ALPHA AWUS036ACH on both sides in 5GHz mode.
+ - **RTL8812au**. (stable) 802.11ac capable. [**Requires external patched driver!**](https://github.com/svpcom/rtl8812au)  System was tested with ALPHA AWUS036ACH on both sides in 5GHz mode.
+ - **RTL8812eu**. (beta) 802.11ac capable. [**Requires external patched driver!**](https://github.com/svpcom/rtl8812eu) System was tested with [LB-LINK's BL-M8812EU2 module](https://www.lb-link.com/product_36_183.html)
+
 
 Not supported, but **may** works:
 ---------------------------------
