@@ -5,6 +5,7 @@
 - [Supported Hardware](WiFi-hardware)
 - [Troubleshooting](Troubleshooting)
 - [Success stories](Success-stories)
+- [Gallery](Gallery)
 - Development
   - [Distributed operation on multiple RX hosts](Distributed-operation-(multiple-RX-hosts))
   - [Kernel Patches](Kernel-patches)
