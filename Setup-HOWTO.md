@@ -140,6 +140,8 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    to ignore WFB-NG interface.
 8. Do `systemctl daemon-reload`, `systemctl start wifibroadcast@gs` on the GS and `systemctl start wifibroadcast@drone` on the drone.
 9. Run `wfb-cli gs` on the GS side to monitor link state
+
+   **Note:** For putty users don't forget to select: `Settings -> Window -> Translation -> Enable VT100 line drawing` checkbox before connect.
 10. For IPoWB (IPv4 over Wifibroadcast tunnel) you need only tun/tap kernel driver (tun.ko).
     Tunnel will be configured and work out of box. Drone side will have ``10.5.0.2/24`` address and GS - ``10.5.0.1/24``.
     Please note that tunnel use **less efficient coding rate** (to minimize latency) than video and mavlink streams and use it only for low-bandwidth traffic (like ssh), not as general link for video and telemetry streams.
