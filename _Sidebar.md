@@ -13,3 +13,4 @@
   - [mavlink-mode](Mavlink-mode)
   - [RX-ring](RX-ring)
   - [wfb_tx and wfb_rx reference](wfb_tx-and-wfb_rx-reference)
+  - [Architecture notes (RU)](notes_ru)
