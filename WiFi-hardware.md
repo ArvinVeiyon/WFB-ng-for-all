@@ -13,5 +13,6 @@ Not supported, but **may** works:
 ---------------------------------
 The following Atheros chipsets should work (not used by author):
 
- -  Atheros AR9271, Atheros AR9280, Atheros AR9287. They requires patched **firmware** for injection support.
+ -  Atheros AR9271, Atheros AR9280, Atheros AR9287 and other **ath9k** usb cards. They requires patched **firmware** for injection support.
+ -  Atheros AR9350 (SoM, WiFi AP like TP-Link CPE510). Works out of box, but unable to control tx power.
  -  ~~Ralink RT28xx family. Cheap, but doesn't produced anymore. System was tested with ALPHA AWUS051NH v2 as TX and array of RT5572 OEM cards as RX in 5GHz mode.~~  **Ralink packet injection is broken in latest 5.x kernels** (injection became too slow and eats 100% cpu)
