@@ -34,7 +34,7 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    ```
    **Note1:** I don't have RF power meter suitable for output power measurement, but via analyzing power consumption of alfa awus036ach card I've found that maximum current consumption is with `rtw_tx_pwr_idx_override=63` (~1.6А in pulse). But some users say that maximum transmit distance is with `rtw_tx_pwr_idx_override=45`. This may be due to nonlinear amplifier distortion or due to measurement errors. **You can burn your card if set high power without active cooling!**
  
-   **Note2:** For "ac180 2W high power" card from aliexpress max value is **`rtw_tx_pwr_idx_override=30`**. Also it **requires** separate +5V power with BEC **>= 5A**, **Low ESR capacitor** and **active cooling** ! Without any of these requirements you will got unstable behavor and/or damage the card!
+   **Note2:** For "ac180 2W high power" card from aliexpress max value is **`rtw_tx_pwr_idx_override=30`**. Also it **requires** separate +5V power with BEC **>= 5A**, **Low ESR capacitor** and **active cooling** ! Without any of these requirements you will got unstable behavior and/or damage the card! Also this cards is not recommended anymore - it has bad RF design (**dies after several days of continuous use**) and have bad SNR on RX (-20dB compared to BL-M8812EU2). Use BL-M8812EU2 as replacement.
 
    rebuild initramfs (`update-initramfs -k all -u`) and reboot. Check with `ethtool -i wlanXX` that drivers version is empty (it will equal to kernel version for stock driver and empty for patched driver).  **NVIDIA Jetson has stock rtl8812au installed. You need to remove it!**
 
