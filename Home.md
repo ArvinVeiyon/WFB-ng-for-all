@@ -13,7 +13,7 @@ This project can be used to create a video and control link between drone and re
  - Provides IPv4 tunnel for generic usage
 
 ## Quick Start
-If you have Raspberry PI 3/3B/3B+/Zero**2W** then you can try to use [preconfigured image](https://github.com/svpcom/wfb-ng/releases/download/wfb-ng-23.01/wfb-ng_23.01-rpi3.img.xz). For other platforms see [Setup HOWTO](Setup-HOWTO)
+If you have Raspberry PI 3/3B/3B+/Zero**2W** then you can try to use [preconfigured image](https://github.com/svpcom/wfb-ng/releases/download/wfb-ng-24.08/wfb-ng_24.08-rpi3.img.xz). For other platforms see [Setup HOWTO](Setup-HOWTO)
 
 Just flash it into the SD-card (8Gb or larger), ssh to the board and follow instructions on the screen.
 
