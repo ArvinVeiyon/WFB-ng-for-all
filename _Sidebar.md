@@ -7,10 +7,10 @@
 - [Success stories](Success-stories)
 - [Gallery](Gallery)
 - Development
-  - [Distributed operation on multiple RX hosts](Distributed-operation-(multiple-RX-hosts))
+  - [Distributed operation on multiple hosts](Distributed-operation)
   - [Kernel Patches](Kernel-patches)
   - [Encryption](Encryption)
   - [mavlink-mode](Mavlink-mode)
   - [RX-ring](RX-ring)
-  - [wfb_tx and wfb_rx reference](wfb_tx-and-wfb_rx-reference)
+  - [`wfb_tx` and `wfb_rx` reference](wfb_tx-and-wfb_rx-reference)
   - [Architecture notes (RU)](notes_ru)
