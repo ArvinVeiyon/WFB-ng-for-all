@@ -10,7 +10,7 @@ Please note that 8811*, 8812bu, 8812cu or 8814au are different cards and not sup
 
 ##### NOTE:
 - For Atheros SoC you need to use [cluster mode (beta)](../Distributed-operation) due to CPU, Flash and RAM limits.
-- If you want only RX then in theory any card with monitoring mode will be suitable. For examle you can try your OpenWRT-enabled router.
+- If you want **only RX** then in theory any card with monitoring mode will be suitable. For example you can try your OpenWRT-enabled router in [cluster mode (beta)](../Distributed-operation). Some cards doesn't support **LDPC** and you can try to disable it on **TX side** if you don't receive any packets.
 - AC180 (aka Big Rookie) is not recommended anymore - it has bad RF design (**dies after several days of continuous use**) and bad SNR on RX (-20dB compared to BL-M8812EU2). Use BL-M8812EU2 as replacement.
 
 Not supported, but **may** works:
