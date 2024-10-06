@@ -43,7 +43,7 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    ```
    cat > /etc/udev/rules.d/65-persistent-net.rules <<EOF
    SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="50:2b:73:00:0b:01",NAME="wfb0"
-   SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="04:42:1a:3c:86:33",NAME="wfb0"
+   SUBSYSTEM=="net",ACTION=="add",ATTR{address}=="04:42:1a:3c:86:33",NAME="wfb1"
    EOF
    ```
 
