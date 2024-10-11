@@ -6,13 +6,25 @@ Cheap / thin / unshielded USB cables may issue strange behavior like a lot of FE
 
 Always connect wifi card `+5V` wire to the BEC (not to USB +5V). Use at least 5A BEC for card power!
 
-Add >= 470uF low ESR capacitor (like ESC has, for example Panasinic EEUFR1V102) between power and ground to filter voltage spikes. Be aware of [ground loop](https://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) when using several ground wires.
+Add >= 470uF low ESR capacitor (like ESC has, for example Panasonic EEUFR1V102) between power and ground to filter voltage spikes. Be aware of [ground loop](https://en.wikipedia.org/wiki/Ground_loop_%28electricity%29) when using several ground wires.
 
 In any condition don't power up wifi card without antennas!
 
-How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
+How to install WFB-NG with bidirectional mavlink telemetry and IP-tunnel
 --------------------------------------------------------------------
-1. Install [**patched** driver **v5.2.20**](https://github.com/svpcom/rtl8812au) for **realtek** cards.
+
+### Prereqs:
+
+- Card on 8812au or 8812eu chipset. I recommend to use [BL-M8812EU2 module](https://aliexpress.ru/item/1005006869601109.html)
+- Good quality [5V >=5A DC-DC](https://aliexpress.ru/item/1005001629723875.html)
+- Panasonic EEUFR1V102 capacitor
+- 30x30mm heatsink with cooler. This is absolutely required! BL-M8812EU2 will burn out quickly without active cooling
+
+### Configuration:
+
+1. Driver install
+ - **For 8812au**:
+   - Install [**patched** driver **v5.2.20**](https://github.com/svpcom/rtl8812au).
 
    - Don't use **ralink (rt28xx)** cards with **5.x** kernels - they have **broken injection (became too slow)!**
 
@@ -35,6 +47,18 @@ How to install WFB-NG with bidirectional mavlink telemetry and IPoWB
    **Note1:** I don't have RF power meter suitable for output power measurement, but via analyzing power consumption of alfa awus036ach card I've found that maximum current consumption is with `rtw_tx_pwr_idx_override=63` (~1.6А in pulse). But some users say that maximum transmit distance is with `rtw_tx_pwr_idx_override=45`. This may be due to nonlinear amplifier distortion or due to measurement errors. **You can burn your card if set high power without active cooling!**
  
    **Note2:** For "ac180 2W high power" card from aliexpress max value is **`rtw_tx_pwr_idx_override=30`**. Also it **requires** separate +5V power with BEC **>= 5A**, **Low ESR capacitor** and **active cooling** ! Without any of these requirements you will got unstable behavior and/or damage the card! Also this cards is not recommended anymore - it has bad RF design (**dies after several days of continuous use**) and have bad SNR on RX (-20dB compared to BL-M8812EU2). Use BL-M8812EU2 as replacement.
+
+ - **For 8812eu**:
+   - Install [**patched** driver](https://github.com/svpcom/rtl8812eu)
+   - Set driver parameters to TX power control:
+
+   ```
+   cat > /etc/modprobe.d/wfb.conf <<EOF
+   options 8812eu rtw_tx_pwr_by_rate=0 rtw_tx_pwr_lmt_enable=0
+   EOF  
+   ```
+
+   **Note:** For 8812eu preferred way to control txpower is using `wifi_txpower` in wifibroadcast.cfg. See `master.cfg` for reference. 
 
    rebuild initramfs (`update-initramfs -k all -u`) and reboot. Check with `ethtool -i wlanXX` that drivers version is empty (it will equal to kernel version for stock driver and empty for patched driver).  **NVIDIA Jetson has stock rtl8812au installed. You need to remove it!**
 
